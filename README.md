@@ -11,7 +11,7 @@ Features:
 
 ## Installation
 Before installing:  
-**Modding itself is against VRChat's ToS, so, according to the staff, it can lead to punishment, these mods included. Be careful while using these! I'm not responsible for any punishments.**
+**Modding itself is against VRChat's ToS, so, according to the staff, it can lead to punishment, this mod included. Be careful while using this! I'm not responsible for any punishments.**
 
 You will need [MelonLoader](https://discord.gg/2Wn3N2P) (discord link, see \#how-to-install).
-After that, drop the mods .dll files in the `Mods` folder in your game's directory.
+After that, drop the mod .dll file in the `Mods` folder in your game's directory.
