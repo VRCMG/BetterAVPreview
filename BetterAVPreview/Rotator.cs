@@ -35,32 +35,26 @@ namespace AVPreview
             AvPreview = Avatar.Find("AvatarPreviewBase");
             AvRoot = AvPreview.Find("MainRoot");
             AvModel = AvRoot.Find("MainModel");
-
-            GameObject toggleClone = Object.Instantiate(sliderObj.parent.Find("InvertedMouse").gameObject, Avatar.transform);
+            
             sliderCloneX = Object.Instantiate(sliderObj.gameObject, Avatar.transform);
             sliderCloneTextX = Object.Instantiate(sliderObj.parent.Find("MouseSensitivityText").gameObject, sliderCloneX.transform);
             sliderCloneTextX.transform.position = sliderCloneX.transform.position;
             sliderCloneY = Object.Instantiate(sliderObj.gameObject, Avatar.transform);
             sliderCloneTextY = Object.Instantiate(sliderObj.parent.Find("MouseSensitivityText").gameObject, sliderCloneY.transform);
             sliderCloneTextY.transform.position = sliderCloneY.transform.position;
-
-            toggleClone.GetComponent<Toggle>().onValueChanged = new Toggle.ToggleEvent();
+            
             sliderCloneX.GetComponent<Slider>().onValueChanged = new Slider.SliderEvent();
             sliderCloneY.GetComponent<Slider>().onValueChanged = new Slider.SliderEvent();
-            toggleClone.GetComponent<Toggle>().onValueChanged.AddListener((UnityEngine.Events.UnityAction<bool>)((isOn) => { OnButtonToggle(isOn); }));
             sliderCloneX.GetComponent<Slider>().onValueChanged.AddListener((UnityEngine.Events.UnityAction<float>)((_) => { OnSlide(); }));
             sliderCloneY.GetComponent<Slider>().onValueChanged.AddListener((UnityEngine.Events.UnityAction<float>)((_) => { OnSlide(); }));
             sliderCloneX.GetComponent<Slider>().value = 0.5f;
             sliderCloneY.GetComponent<Slider>().value = 0.5f;
-
-            toggleClone.transform.Find("Label").GetComponent<Text>().text = "Toggle Manual Rotation";
+            
             sliderCloneTextX.GetComponent<Text>().text = "X:";
             sliderCloneTextY.GetComponent<Text>().text = "Y:";
-            toggleClone.name = "ToggleRot";
             sliderCloneX.name = "RotationX";
             sliderCloneY.name = "RotationY";
-
-            toggleClone.GetComponent<Toggle>().isOn = false;
+            
             sliderCloneX.SetActive(false);
             sliderCloneY.SetActive(false);
 
@@ -68,7 +62,7 @@ namespace AVPreview
             sliderCloneY.transform.position = ChangeButton.position;
         }
 
-        private static void OnButtonToggle(bool isOn)
+        public static void OnButtonToggle(bool isOn)
         {
             if (isOn)
             {
