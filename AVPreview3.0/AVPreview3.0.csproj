@@ -61,6 +61,10 @@
       <HintPath>..\..\..\..\..\Jogos\SteamLibrary\steamapps\common\VRChat\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\Jogos\SteamLibrary\steamapps\common\VRChat\MelonLoader\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="VRCSDK3A">
       <HintPath>..\..\..\..\..\Jogos\SteamLibrary\steamapps\common\VRChat\MelonLoader\Managed\VRCSDK3A.dll</HintPath>
       <Private>False</Private>
@@ -72,6 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Rotator.cs" />
     <Compile Include="Utils\EnableDisableListener.cs" />
   </ItemGroup>
   <ItemGroup>
