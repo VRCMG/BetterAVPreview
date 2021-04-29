@@ -9,18 +9,16 @@ And thanks to the entire modding community in general for inspiring me to get in
 Current features:
 - Facial expressions;
 - Changing states like clothes and colors;
-- Simple rotation mechanism with sliders;
 - Integration with ActionMenu.
+- Scuffed and simple rotation mechanism with sliders (very glitched and unreliable for now xd); 
 
 To do:
-- Fix bug that after using the av preview ur avatar expressions will stop working (local);
-- Fix bug that the actionmenu keeps opened on the expressions page, leading to it not updating until closing and opening the page again;
-- Fix bug that the Avatar current parameters get lost when setting the preview;
-- See if fixing the shaders glitch is possible;
-- Implement pop-up to better preview;
 - Wait for louky to finish rotator to use his instead of my current one;
+- See if fixing the shaders (layers?) glitch is possible;
 - See if it's possible to use animations;
-- Implement for av2.0.
+- Implement pop-up to better preview;
+- Finish implementing for 2.0;
+- Might as well implement DynamicBoneController
 
 ## Installation
 Before installing:  

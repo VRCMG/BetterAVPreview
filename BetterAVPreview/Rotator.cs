@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using Harmony;
+using System.Reflection;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using MelonLoader;
+using VRC.UI;
 
 namespace AVPreview
 {
@@ -23,6 +26,13 @@ namespace AVPreview
         private static Vector3 proportion;
         private static bool UsingEmm() => MelonHandler.Mods.Any(m => m.Info.Name.Contains("emmVRC"));
         private static bool runOnce = false;
+
+        public static void HarmonyPatches()
+        {
+            foreach (MethodInfo method in typeof(PageAvatar).GetMethods().Where(m => m.Name.Contains("Method_Private_Void_String_GameObject_AvatarPerformanceStats"))) Main.HarmonyInstance.Patch(method, new HarmonyMethod(typeof(Controller).GetMethod(nameof(Reposition))));
+        }
+
+        public static void Reposition() {  }
 
         public static void VRChat_OnUiManagerInit()
         {

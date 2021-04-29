@@ -4,6 +4,7 @@ using MelonLoader;
 using UnityEngine;
 using UnityEngine.UI;
 using AVPreview.Utils;
+using UnhollowerRuntimeLib.XrefScans;
 
 namespace AVPreview
 {
@@ -11,7 +12,7 @@ namespace AVPreview
     {
         public const string Name = "BetterAVPreview";
         public const string Author = "Davi";
-        public const string Version = "1.0.0";
+        public const string Version = "1.0.2";
     }
 
     public class Main : MelonMod
@@ -21,8 +22,14 @@ namespace AVPreview
         public static EnableDisableListener listener;
         public static GameObject toggleClone;
 
+        // To use: XRef(nameof(<insert class>.<insert method>));
+        // public static void XRef(string Name) { foreach (var instance in XrefScanner.UsedBy(typeof(AvatarPlayableController).GetMethod(Name))) if (instance.TryResolve() != null) MelonLogger.Msg(instance.TryResolve().FullDescription()); }
+        // To use: XRefStr(<string to find on methods>);
+        // public static void XRefStr(string Str) { foreach (var method in typeof(<insert class>).GetMethods()) { try { foreach (UnhollowerRuntimeLib.XrefScans.XrefInstance instance in UnhollowerRuntimeLib.XrefScans.XrefScanner.XrefScan(method)) { try { if (instance.Type == UnhollowerRuntimeLib.XrefScans.XrefType.Global) { MelonLogger.Msg($"{method.Name}, {instance.ReadAsObject().ToString()}"); } } catch { } } } catch { } } }
+
         public override void OnApplicationStart()
         {
+            // XRef(nameof(ActionMenu.Method_Private_Void_PDM_1));
             Instance = this;
             ClassInjector.RegisterTypeInIl2Cpp<EnableDisableListener>();
             HarmonyPatches();
