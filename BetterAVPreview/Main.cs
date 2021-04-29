@@ -12,7 +12,7 @@ namespace AVPreview
     {
         public const string Name = "BetterAVPreview";
         public const string Author = "Davi";
-        public const string Version = "1.0.2";
+        public const string Version = "1.0.3";
     }
 
     public class Main : MelonMod
@@ -41,8 +41,6 @@ namespace AVPreview
         public override void VRChat_OnUiManagerInit()
         {
             listener = GameObject.Find("UserInterface/MenuContent/Screens/Avatar").AddComponent<EnableDisableListener>();
-            Controller.VRChat_OnUiManagerInit();
-            Rotator.VRChat_OnUiManagerInit();
 
             GameObject Menu = GameObject.Find("UserInterface/MenuContent/Screens");
 
@@ -56,6 +54,7 @@ namespace AVPreview
 
             toggleClone.GetComponent<Toggle>().isOn = false;
 
+            Controller.VRChat_OnUiManagerInit();
             Rotator.VRChat_OnUiManagerInit();
         }
 

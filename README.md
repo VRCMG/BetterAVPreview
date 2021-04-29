@@ -8,9 +8,10 @@ And thanks to the entire modding community in general for inspiring me to get in
 ## BetterAVPreview
 Current features:
 - Facial expressions;
+- Dynamic Bones;
 - Changing states like clothes and colors;
-- Integration with ActionMenu.
-- Scuffed and simple rotation mechanism with sliders (very glitched and unreliable for now xd); 
+- Integration with ActionMenu;
+- Scuffed and simple rotation mechanism with sliders (very glitched and unreliable for now xd).
 
 To do:
 - Wait for louky to finish rotator to use his instead of my current one;
@@ -18,7 +19,6 @@ To do:
 - See if it's possible to use animations;
 - Implement pop-up to better preview;
 - Finish implementing for 2.0;
-- Might as well implement DynamicBoneController
 
 ## Installation
 Before installing:  

@@ -1,0 +1,6 @@
+D:\Davi\Code\C#\BetterAVPreview\BetterAVPreview\obj\Debug\BetterAVPreview.csproj.CoreCompileInputs.cache
+D:\Davi\Code\C#\BetterAVPreview\BetterAVPreview\obj\Debug\BetterAVPreview.dll
+D:\Davi\Code\C#\BetterAVPreview\BetterAVPreview\obj\Debug\BetterAVPreview.pdb
+D:\Davi\Code\C#\BetterAVPreview.dll
+D:\Davi\Code\C#\BetterAVPreview.pdb
+D:\Davi\Code\C#\BetterAVPreview\BetterAVPreview\obj\Debug\BetterAVPreview.csprojAssemblyReference.cache

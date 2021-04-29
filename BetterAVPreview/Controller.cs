@@ -3,6 +3,7 @@ using System.Reflection;
 using Harmony;
 using UnityEngine;
 using UnityEngine.UI;
+using VRC;
 using VRC.UI;
 using VRCSDK2;
 using VRC.SDK3.Avatars.Components;
@@ -60,6 +61,7 @@ namespace AVPreview
             }
             else
             {
+                if (MainModel().GetComponentInChildren<DynamicBoneController>() != null) MainModel().GetComponentInChildren<DynamicBoneController>().enabled = false;
                 if (CurrentController != null) CurrentController.enabled = false;
                 if (Patch) ResetState();
                 actionMenuDriver.gameObject.SetActive(false);
@@ -77,6 +79,7 @@ namespace AVPreview
                     CurrentController.field_Private_Boolean_0 = true;
                     CurrentController.field_Private_Boolean_1 = true;
                     CurrentController.field_Private_Boolean_2 = true;
+                    CurrentController.field_Private_Boolean_3 = false;
                     CurrentController.field_Private_VRCPlayer_0 = Player();
                 }
                 if (CurrentController != null && Main.toggleClone.GetComponent<Toggle>().isOn)
@@ -101,6 +104,8 @@ namespace AVPreview
                     Patch = true;
                 }
             }
+            if (MainModel().GetComponentInChildren<DynamicBoneController>() == null) CurrentController.gameObject.AddComponent<DynamicBoneController>().Method_Public_Void_IEnumerable_1_DynamicBone_EnumNPublicSealedva3vUnique_PDM_0(MainModel().GetComponentsInChildren<DynamicBone>().Cast<Il2CppSystem.Collections.Generic.IEnumerable<DynamicBone>>(), DynamicBoneController.EnumNPublicSealedva3vUnique.EnumValue0);
+            else MainModel().GetComponentInChildren<DynamicBoneController>().enabled = true;
         }
         
         private static void ResetState()
